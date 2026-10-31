@@ -1,0 +1,12 @@
+---
+const { items } = Astro.props;
+---
+<ul class="mt-8 flex items-center gap-6 font-mono text-xs uppercase tracking-widest" aria-label="Contact">
+  {items.map((s) => (
+    <li>
+      {s.href
+        ? <a href={s.href} rel="noopener" class="text-mute transition hover:text-accent">{s.label}</a>
+        : <span class="pending" title="Link to be supplied" aria-disabled="true">{s.label}</span>}
+    </li>
+  ))}
+</ul>

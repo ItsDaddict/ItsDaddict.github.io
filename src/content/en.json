@@ -1,0 +1,97 @@
+{
+  "meta": { "title": "Yahya Kamal | Computer Science Engineering Student", "description": "E-portfolio of a computer science engineering student at ENSEEIHT (Toulouse INP)." },
+  "name": "Yahya Kamal",
+  "role": "Computer Science Engineering Student, ENSEEIHT (Toulouse INP)",
+  "pitch": "I'm drawn to the mathematical foundations of intelligent systems, and I want to learn to build software that puts them to work. I came to engineering school through the Moroccan CPGE track, and I'm now exploring AI, machine learning and research through coursework and projects.",
+  "nav": [
+    { "id": "about", "label": "About" },
+    { "id": "engineering-courses", "label": "Engineering" },
+    { "id": "career-development", "label": "Career" },
+    { "id": "international-mobility", "label": "International" },
+    { "id": "civic-engagement", "label": "Civic" },
+    { "id": "sports-activities", "label": "Sports" },
+    { "id": "resume", "label": "Resume" }
+  ],
+  "social": [
+    { "label": "GitHub", "href": null },
+    { "label": "LinkedIn", "href": null },
+    { "label": "Email", "href": null }
+  ],
+  "about": {
+    "paras": [
+      "I'm a computer science engineering student at ENSEEIHT (Toulouse INP) on the SN track. Before that, I completed the Moroccan CPGE preparatory programme, which gave me a solid base in mathematics, physics and computer science. It also taught me to approach hard problems with rigour and persistence.",
+      "My interests sit between computer science, mathematical reasoning and innovation. I'm especially curious about artificial intelligence, machine learning and research, and I'm also interested in software development and entrepreneurship."
+    ],
+    "journey": [
+      { "k": "Curiosity", "w": "Middle school and high school", "t": "I experimented with HTML, CSS and JavaScript, made small games in Unity, and tried Python. These were personal experiments, and they taught me to see programming as a way to turn ideas into working systems." },
+      { "k": "Rigour", "w": "CPGE TSI", "t": "Two years of intensive mathematics and physics strengthened my abstraction and problem-solving skills." },
+      { "k": "Depth", "w": "ENSEEIHT", "t": "I want to build engineering skills on that foundation and see how rigorous technical knowledge can lead to useful products and original research." }
+    ]
+  },
+  "courses": {
+    "skills": [
+      { "area": "Mathematics & scientific reasoning", "detail": "Two years of CPGE TSI; rigorous reasoning and abstraction; interest in the mathematical foundations of AI and ML", "status": "Completed" },
+      { "area": "Ada", "detail": "Current engineering coursework at ENSEEIHT", "status": "In progress" },
+      { "area": "Python", "detail": "Personal experimentation, CPGE coursework, and introductory object-oriented programming, i also went through harvard's CS50 course.", "status": "Introductory" },
+      { "area": "HTML / CSS / JavaScript", "detail": "Explored in middle school and high school", "status": "Early experiments" },
+      { "area": "Linux", "detail": "About eight years of use, with more intensive configuration and exploration recently (i use arch btw)", "status": "Ongoing" },
+      { "area": "Development environment", "detail": "Exploring system configuration and development workflows", "status": "In progress" }
+    ],
+    "skillsNote": "Further skills will be added as coursework or projects demonstrate them.",
+    "projects": [],
+    "projectsPlaceholder": "I'm documenting my work and will publish it here as it becomes presentable, with the problem, my contribution and the lessons learned for each project."
+  },
+  "career": {
+    "interests": ["Artificial intelligence", "Machine learning", "Research", "Software engineering", "Entrepreneurship"],
+    "text": "I want to understand the mathematical and conceptual foundations of intelligent systems, rather than treat AI as a collection of tools. I also want the practical engineering ability to implement ideas and potentially turn promising ones into products. These interests are exploratory: I plan to refine my direction through coursework, independent projects, internships and research opportunities.",
+    "goals": [
+      "Deepen my foundations in computer science, mathematics and programming.",
+      "Gain practical experience through substantial technical projects.",
+      "Explore research opportunities in AI and machine learning.",
+      "Learn how to turn technical ideas into usable products.",
+      "Investigate entrepreneurship as a possible long-term path."
+    ],
+    "internship": "Status to be announced. I'll share the target period, preferred fields and application status here once they are confirmed.",
+    "pitchTitle": "Elevator pitch",
+    "pitchNote": "Not yet recorded. This area will be updated once the pitch is ready.",
+    "pitchEmbed": null
+  },
+  "mobility": {
+    "intro": "I'm interested in international academic and professional opportunities that would let me deepen my technical expertise, experience different research and engineering environments, and work with people from different backgrounds.",
+    "destinations": [
+      { "name": "Georgia Institute of Technology, United States", "tag": "Aspiration", "text": "I'm interested in Georgia Tech as a possible future step, particularly for computer science, AI, machine learning and research. This is an aspiration, not a confirmed admission, exchange placement or partnership. Feasibility, programme requirements, funding and mobility routes are still to be investigated." },
+      { "name": "Japan", "tag": "Aspiration", "text": "I'm also interested in an academic or cultural experience in Japan through opportunities associated with ENSEEIHT or Toulouse INP. The exact programme has not been confirmed." }
+    ],
+    "gainsTitle": "What I hope to gain",
+    "gains": [
+      "Exposure to different academic and research cultures.",
+      "International collaboration skills.",
+      "Greater independence and adaptability.",
+      "A broader view of global engineering and innovation ecosystems."
+    ]
+  },
+  "civic": {
+    "status": "No confirmed roles yet.",
+    "text": "I'm building this section from documented contributions. It will cover student associations, volunteering or community initiatives, organising events or outings, and coordination or support responsibilities.",
+    "entries": []
+  },
+  "sports": {
+    "intro": "Sport is an important part of my life outside engineering school: bodybuilding and strength training, basketball, occasional running, hiking and other physical activities. They help me keep a balanced routine alongside demanding academic work.",
+    "qualities": [
+      { "q": "Consistency", "how": "Keeping up training alongside academic responsibilities" },
+      { "q": "Adaptability", "how": "Moving between different sports and outdoor environments" },
+      { "q": "Social interaction", "how": "Enjoying collaboration and getting along with different people" },
+      { "q": "Perseverance", "how": "Working towards demanding physical and academic goals" }
+    ],
+    "qualitiesNote": "Concrete examples will be added for each quality.",
+    "hikeTitle": "Featured experience: demanding hike",
+    "hike": "I've done demanding hikes, including a long-distance outing with significant elevation gain.(21km 750D+ and 15km 900D+) this October. They tested my endurance, preparation and ability to pace effort over a long period."
+  },
+  "resume": {
+    "text": "My CVs in French and English will be available for download here once finalised.",
+    "files": [
+      { "label": "Download CV (Français)", "href": null },
+      { "label": "Download CV (English)", "href": null }
+    ]
+  }
+}

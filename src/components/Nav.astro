@@ -1,0 +1,15 @@
+---
+const { items, mobile = false } = Astro.props;
+---
+<nav aria-label="Sections" data-mobile-nav={mobile ? '' : undefined}>
+  <ul class={mobile ? 'flex gap-6 overflow-x-auto px-6 py-3 [scrollbar-width:none]' : 'mt-16 space-y-3'}>
+    {items.map((i) => (
+      <li class="shrink-0">
+        <a href={`#${i.id}`} class="nav-link group flex items-center gap-4 py-1">
+          {!mobile && <span class="bar"></span>}
+          <span class="lbl font-mono text-xs font-medium uppercase tracking-widest">{i.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

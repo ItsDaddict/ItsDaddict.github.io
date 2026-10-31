@@ -1,0 +1,28 @@
+---
+import Card from './Card.astro';
+import Status from './Status.astro';
+const { p } = Astro.props;
+const links = Object.entries(p.links ?? {}).filter(([, url]) => url);
+---
+<Card>
+  <div class="flex flex-wrap items-baseline gap-x-3">
+    <h4 class="text-lg font-semibold text-fg">{p.title}</h4>
+    <Status label={p.context} /> <Status label={p.status} />
+  </div>
+  <p class="mt-2 text-sm leading-relaxed text-mute">{p.description}</p>
+  <dl class="mt-3 space-y-2 text-sm text-mute">
+    {p.problem && <div><dt class="font-medium text-fg">Problem and design choices</dt><dd>{p.problem}</dd></div>}
+    {p.contribution && <div><dt class="font-medium text-fg">My contribution</dt><dd>{p.contribution}</dd></div>}
+    {p.outcome && <div><dt class="font-medium text-fg">Outcome and lessons</dt><dd>{p.outcome}</dd></div>}
+  </dl>
+  {p.stack?.length > 0 && (
+    <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+      {p.stack.map((t) => <li class="rounded-full bg-accent/10 px-3 py-1 font-mono text-xs text-accent">{t}</li>)}
+    </ul>
+  )}
+  {links.length > 0 && (
+    <p class="mt-3 flex gap-4 font-mono text-xs uppercase tracking-widest">
+      {links.map(([k, url]) => <a href={url} rel="noopener" class="text-mute hover:text-accent">{k}</a>)}
+    </p>
+  )}
+</Card>

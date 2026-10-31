@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Social from '../components/Social.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Status from '../components/Status.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import c from '../content/en.json';
+---
+<Layout title={c.meta.title} description={c.meta.description}>
+  <!-- Mobile: sticky top nav -->
+  <div class="sticky top-0 z-40 border-b border-slate-800/60 bg-bg/90 backdrop-blur lg:hidden">
+    <Nav items={c.nav} mobile />
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-screen-xl px-6 md:px-12 lg:grid lg:grid-cols-[2fr_3fr] lg:gap-16 lg:px-24">
+    <!-- Left column (sticky on desktop) -->
+    <header class="relative isolate pt-16 lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:py-24">
+      <img src="/portrait.png" alt="" aria-hidden="true" class="portrait-bg" />
+      <div>
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{c.name}</h1>
+        <p class="mt-3 text-lg font-medium sm:text-xl">{c.role}</p>
+        <p class="mt-4 max-w-xs leading-relaxed text-mute">{c.pitch}</p>
+        <div class="hidden lg:block"><Nav items={c.nav} /></div>
+      </div>
+      <Social items={c.social} />
+    </header>
+
+    <!-- Right column -->
+    <main id="main" class="pt-24 pb-24 lg:w-full lg:py-24">
+      <Section id="about" title="About">
+        <div class="space-y-4 leading-relaxed text-mute">
+          {c.about.paras.map((p) => <p>{p}</p>)}
+        </div>
+        <ol class="mt-8 space-y-2">
+          {c.about.journey.map((j) => (
+          <li><Card>
+            <p class="font-mono text-xs uppercase tracking-widest text-accent/80">{j.k} · {j.w}</p>
+            <p class="mt-2 text-sm leading-relaxed text-mute">{j.t}</p>
+            </Card></li>
+            ))}
+        </ol>
+      </Section>
+
+      <Section id="engineering-courses" title="Engineering & Courses">
+        <h3 class="mb-2 font-mono text-xs uppercase tracking-widest text-mute">Skills snapshot</h3>
+        <ul class="space-y-2">
+          {c.courses.skills.map((s) => (
+          <li><Card>
+            <div class="flex flex-wrap items-baseline gap-x-3">
+              <h4 class="font-semibold text-fg">{s.area}</h4><Status label={s.status} />
+            </div>
+            <p class="mt-1 text-sm text-mute">{s.detail}</p>
+            </Card></li>
+            ))}
+        </ul>
+        <p class="mt-3 text-sm italic text-mute">{c.courses.skillsNote}</p>
+
+        <h3 class="mt-12 mb-2 font-mono text-xs uppercase tracking-widest text-mute">Projects</h3>
+        {c.courses.projects.length > 0
+        ? <ul class="space-y-2">{c.courses.projects.map((p) => <li><ProjectCard p={p} /></li>)}</ul>
+        : <p class="text-sm leading-relaxed text-mute">{c.courses.projectsPlaceholder}</p>}
+      </Section>
+
+      <Section id="career-development" title="Career Development">
+        <ul class="mb-4 flex flex-wrap gap-2" aria-label="Professional interests">
+          {c.career.interests.map((i) => <li class="rounded-full bg-accent/10 px-3 py-1 font-mono text-xs text-accent">{i}</li>)}
+        </ul>
+        <p class="leading-relaxed text-mute">{c.career.text}</p>
+        <h3 class="mt-10 mb-2 font-mono text-xs uppercase tracking-widest text-mute">Goals during engineering school</h3>
+        <ul class="list-disc space-y-1 pl-5 text-sm text-mute marker:text-accent">
+          {c.career.goals.map((g) => <li>{g}</li>)}
+        </ul>
+        <h3 class="mt-10 mb-2 font-mono text-xs uppercase tracking-widest text-mute">Internship search</h3>
+        <p class="text-sm text-mute">{c.career.internship}</p>
+        <h3 class="mt-10 mb-2 font-mono text-xs uppercase tracking-widest text-mute">{c.career.pitchTitle}</h3>
+        {c.career.pitchEmbed
+        ? <div class="aspect-video overflow-hidden rounded-md"><iframe src={c.career.pitchEmbed} title="Elevator pitch" class="h-full w-full" allowfullscreen loading="lazy"></iframe></div>
+        : <div class="flex aspect-video items-center justify-center rounded-md bg-slate-800/30 p-6 text-center text-sm text-mute" role="note">{c.career.pitchNote}</div>}
+      </Section>
+
+      <Section id="international-mobility" title="International Mobility">
+        <p class="leading-relaxed text-mute">{c.mobility.intro}</p>
+        <ul class="mt-6 space-y-2">
+          {c.mobility.destinations.map((d) => (
+          <li><Card>
+            <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="font-semibold text-fg">{d.name}</h3><Status label={d.tag} /></div>
+            <p class="mt-2 text-sm leading-relaxed text-mute">{d.text}</p>
+            </Card></li>
+            ))}
+        </ul>
+        <h3 class="mt-10 mb-2 font-mono text-xs uppercase tracking-widest text-mute">{c.mobility.gainsTitle}</h3>
+        <ul class="list-disc space-y-1 pl-5 text-sm text-mute marker:text-accent">
+          {c.mobility.gains.map((g) => <li>{g}</li>)}
+        </ul>
+      </Section>
+
+      <Section id="civic-engagement" title="Civic Engagement">
+        <Status label={c.civic.status} />
+        <p class="mt-2 text-sm leading-relaxed text-mute">{c.civic.text}</p>
+        {c.civic.entries.length > 0 && (
+        <ul class="mt-6 space-y-2">
+          {c.civic.entries.map((e) => (
+          <li><Card>
+            <h3 class="font-semibold text-fg">{e.org}: {e.role}</h3>
+            <p class="text-sm text-mute">{e.text}</p>
+            </Card></li>
+            ))}
+        </ul>
+        )}
+      </Section>
+
+      <Section id="sports-activities" title="Sports & Activities">
+        <p class="leading-relaxed text-mute">{c.sports.intro}</p>
+        <ul class="mt-6 space-y-2">
+          {c.sports.qualities.map((q) => (
+          <li><Card><h3 class="font-semibold text-fg">{q.q}</h3><p class="text-sm text-mute">{q.how}</p></Card></li>
+          ))}
+        </ul>
+        <p class="mt-3 text-sm italic text-mute">{c.sports.qualitiesNote}</p>
+        <div class="mt-10"><Card>
+          <div class="flex flex-wrap items-baseline gap-x-3"><h3 class="font-semibold text-fg">{c.sports.hikeTitle}</h3><Status label={c.sports.hikeTag} /></div>
+            <p class="mt-2 text-sm leading-relaxed text-mute">{c.sports.hike}</p>
+          </Card></div>
+      </Section>
+
+      <Section id="resume" title="Resume">
+        <p class="mb-6 text-sm text-mute">{c.resume.text}</p>
+        <ul class="flex flex-wrap gap-4">
+          {c.resume.files.map((f) => (
+          <li>
+            {f.href
+            ? <a href={f.href} download class="inline-block rounded-md bg-accent px-5 py-3 font-mono text-xs font-medium uppercase tracking-widest text-bg transition hover:-translate-y-1">{f.label}</a>
+            : <span class="pending inline-block rounded-md bg-slate-800/50 px-5 py-3 font-mono text-xs uppercase tracking-widest" aria-disabled="true">{f.label} · coming soon</span>}
+          </li>
+          ))}
+        </ul>
+      </Section>
+
+      <footer class="text-xs text-mute">Built with Astro and Tailwind CSS.</footer>
+    </main>
+  </div>
+</Layout>
+<style>
+  .portrait-bg { display: none; }
+
+  @media (min-width: 1024px) {
+    .portrait-bg {
+      display: block;
+      position: absolute; z-index: -1;
+      top: 40%; left: -50%;            /* pan: more negative = further left */
+      width: 300%; height: auto;       /* full portrait, no cropping */
+      transform: translateY(-50%);
+      opacity: .16;
+      pointer-events: none; user-select: none;
+      -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 50%, transparent 100%);
+              mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 50%, transparent 100%);
+    }
+  }
+</style>

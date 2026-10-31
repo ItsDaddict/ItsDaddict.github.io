@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; background: #0f172a; color: #e2e8f0; }
+body { font-family: theme('fontFamily.sans'); -webkit-font-smoothing: antialiased; }
+::selection { background: rgba(94, 234, 212, .3); }
+:focus-visible { outline: 2px solid #5eead4; outline-offset: 3px; border-radius: 4px; }
+
+/* Spotlight following the cursor */
+#spotlight {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 30%), rgba(94, 234, 212, .07), transparent 80%);
+}
+
+/* Fade-in on scroll: only when JS is available */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* Active nav indicator */
+.nav-link .bar { width: 2rem; height: 1px; background: #64748b; transition: width .2s, background .2s; }
+.nav-link .lbl { color: #64748b; transition: color .2s; }
+.nav-link:hover .bar, .nav-link[data-active='true'] .bar { width: 4rem; background: #e2e8f0; }
+.nav-link:hover .lbl, .nav-link[data-active='true'] .lbl { color: #e2e8f0; }
+
+/* Pending (unavailable) links: no href, clearly discreet */
+.pending { color: #64748b; cursor: not-allowed; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { transition: none; opacity: 1; transform: none; }
+  #spotlight { display: none; }
+}
+
+
+/* Decorative portrait behind the header */
+.portrait {
+  position: absolute; inset: 0; z-index: -1;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  opacity: .12;                       /* ← tune visibility here */
+  pointer-events: none; user-select: none;
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 45%, #000 40%, transparent 100%);
+          mask-image: radial-gradient(ellipse 80% 75% at 50% 45%, #000 40%, transparent 100%);
+}
+@media (min-width: 1024px) { .portrait { opacity: .16; } }
