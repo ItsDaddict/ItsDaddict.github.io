@@ -13,9 +13,9 @@
     { "id": "resume", "label": "Resume" }
   ],
   "social": [
-    { "label": "GitHub", "href": null },
-    { "label": "LinkedIn", "href": null },
-    { "label": "Email", "href": null }
+    { "label": "GitHub", "href": "https://github.com/ItsDaddict" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/yahya-kamal-b06962370/" },
+    { "label": "Email", "href": "mailto:yahyakmedu@gmail.com" }
   ],
   "about": {
     "paras": [
@@ -54,7 +54,8 @@
     "internship": "Status to be announced. I'll share the target period, preferred fields and application status here once they are confirmed.",
     "pitchTitle": "Elevator pitch",
     "pitchNote": "Not yet recorded. This area will be updated once the pitch is ready.",
-    "pitchEmbed": null
+    "pitchVideo": "/video/pitch.mp4",
+    "pitchPoster": "/video/pitch-poster.jpg"
   },
   "mobility": {
     "intro": "I'm interested in international academic and professional opportunities that would let me deepen my technical expertise, experience different research and engineering environments, and work with people from different backgrounds.",
@@ -88,10 +89,10 @@
     "hike": "I've done demanding hikes, including a long-distance outing with significant elevation gain.(21km 750D+ and 15km 900D+) this October. They tested my endurance, preparation and ability to pace effort over a long period."
   },
   "resume": {
-    "text": "My CVs in French and English will be available for download here once finalised.",
+    "text": "My CVs :",
     "files": [
-      { "label": "Download CV (Français)", "href": null },
-      { "label": "Download CV (English)", "href": null }
+      { "label": "Download CV (Français)", "href": "/cv/Yahya-Kamal-CV-fr.pdf" },
+      { "label": "Download CV (English)", "href": "/cv/Yahya-Kamal-CV-en.pdf" }
     ]
   }
 }

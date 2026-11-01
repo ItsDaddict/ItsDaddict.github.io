@@ -75,11 +75,13 @@ import c from '../content/en.json';
         <h3 class="mt-10 mb-2 font-mono text-xs uppercase tracking-widest text-mute">Internship search</h3>
         <p class="text-sm text-mute">{c.career.internship}</p>
         <h3 class="mt-10 mb-2 font-mono text-xs uppercase tracking-widest text-mute">{c.career.pitchTitle}</h3>
-        {c.career.pitchEmbed
-        ? <div class="aspect-video overflow-hidden rounded-md"><iframe src={c.career.pitchEmbed} title="Elevator pitch" class="h-full w-full" allowfullscreen loading="lazy"></iframe></div>
+        {c.career.pitchVideo
+        ? <video class="aspect-video w-full rounded-md bg-slate-800/30" controls preload="metadata" playsinline poster={c.career.pitchPoster ?? undefined}>
+          <source src={c.career.pitchVideo} type="video/mp4" />
+          Your browser can't play this video. <a href={c.career.pitchVideo}>Download it</a>.
+        </video>
         : <div class="flex aspect-video items-center justify-center rounded-md bg-slate-800/30 p-6 text-center text-sm text-mute" role="note">{c.career.pitchNote}</div>}
       </Section>
-
       <Section id="international-mobility" title="International Mobility">
         <p class="leading-relaxed text-mute">{c.mobility.intro}</p>
         <ul class="mt-6 space-y-2">
@@ -155,7 +157,7 @@ import c from '../content/en.json';
       opacity: .16;
       pointer-events: none; user-select: none;
       -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 50%, transparent 100%);
-              mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 50%, transparent 100%);
+      mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 50%, transparent 100%);
     }
   }
 </style>
